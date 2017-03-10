@@ -24,6 +24,7 @@
 		336E51C21E72C98F006C9422 /* UIColor+LiuAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51B91E72C98F006C9422 /* UIColor+LiuAdditon.m */; };
 		336E51C31E72C98F006C9422 /* UILabel+LiuAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51BB1E72C98F006C9422 /* UILabel+LiuAddition.m */; };
 		336E51C41E72C98F006C9422 /* UIViewController+LiuAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51BD1E72C98F006C9422 /* UIViewController+LiuAddition.m */; };
+		336E51C71E72CD28006C9422 /* LiuNewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51C61E72CD28006C9422 /* LiuNewsCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		336E51BB1E72C98F006C9422 /* UILabel+LiuAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LiuAddition.m"; sourceTree = "<group>"; };
 		336E51BC1E72C98F006C9422 /* UIViewController+LiuAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LiuAddition.h"; sourceTree = "<group>"; };
 		336E51BD1E72C98F006C9422 /* UIViewController+LiuAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LiuAddition.m"; sourceTree = "<group>"; };
+		336E51C51E72CD28006C9422 /* LiuNewsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuNewsCollectionViewCell.h; sourceTree = "<group>"; };
+		336E51C61E72CD28006C9422 /* LiuNewsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuNewsCollectionViewCell.m; sourceTree = "<group>"; };
 		95F3A900CD141561C4E4AE5E /* libPods-LiuWangYiNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiuWangYiNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E698CEC9FA3096D66F677E /* Pods-LiuWangYiNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiuWangYiNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiuWangYiNews/Pods-LiuWangYiNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +160,8 @@
 		336E51A31E72BDE0006C9422 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				336E51C51E72CD28006C9422 /* LiuNewsCollectionViewCell.h */,
+				336E51C61E72CD28006C9422 /* LiuNewsCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				336E51C01E72C98F006C9422 /* NSObject+LiuAddition.m in Sources */,
 				336E51BE1E72C98F006C9422 /* NSArray+LiuAddition.m in Sources */,
 				336E51C11E72C98F006C9422 /* UIButton+LiuAddition.m in Sources */,
+				336E51C71E72CD28006C9422 /* LiuNewsCollectionViewCell.m in Sources */,
 				336E51AA1E72C297006C9422 /* NSArray+reDescriptionAddition.m in Sources */,
 				336E51AD1E72C313006C9422 /* LiuSourceDataModel.m in Sources */,
 				336E518B1E72BB1C006C9422 /* AppDelegate.m in Sources */,

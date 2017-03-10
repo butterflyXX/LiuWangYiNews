@@ -9,7 +9,7 @@
 #import "LiuHomeViewController.h"
 #import "LiuSourceDataModel.h"
 #import "LiuSysAddition.h"
-@interface LiuHomeViewController ()
+@interface LiuHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 /**
  频道栏scrollview
@@ -41,11 +41,13 @@
     
     //不要系统自适应navigationbar
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.view.backgroundColor = [UIColor redColor];
     [self loadData];
     [self loadchannelScrollView];
+    [self loadNewsCollectionView];
 }
 
-
+#pragma mark - 加载数据
 -(void)loadData {
     
     NSArray *dataArray = [LiuSourceDataModel analysisDataWithJSONName:@"topic_news.json"];
@@ -54,6 +56,7 @@
    
 }
 
+#pragma mark - 设置频道栏label
 -(void)loadchannelScrollView {
     
     //去掉频道栏的滚动条和弹簧效果
@@ -76,6 +79,42 @@
     //设置滚动范围
     self.channelScrollView.contentSize = CGSizeMake(labelW * self.dataArray.count, 0);
 }
+
+#pragma mark - 设置新闻栏
+
+-(void)loadNewsCollectionView {
+    
+    //设置布局对象layout
+    self.flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 64 - 44);
+    self.flowLayout.minimumLineSpacing = 0;
+    self.flowLayout.minimumInteritemSpacing = 0;
+    self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    //设置数据源和代理
+    self.newsCollectionView.dataSource = self;
+    self.newsCollectionView.delegate = self;
+    
+    //取消滚动条和弹簧效果
+    self.newsCollectionView.showsHorizontalScrollIndicator = NO;
+    self.newsCollectionView.showsVerticalScrollIndicator = NO;
+    self.newsCollectionView.bounces = NO;
+    
+    //设置分页效果
+    self.newsCollectionView.pagingEnabled = YES;
+}
+
+#pragma mark - 数据源,代理方法
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.dataArray.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+
 
 
 
