@@ -9,6 +9,7 @@
 #import "LiuHomeViewController.h"
 #import "LiuSourceDataModel.h"
 #import "LiuSysAddition.h"
+#import "LiuNewsCollectionViewCell.h"
 @interface LiuHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 /**
@@ -109,7 +110,11 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
+    LiuNewsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
+    
+    LiuSourceDataModel *model = self.dataArray[indexPath.item];
+    
+    cell.tid =model.tid;
     
     return cell;
 }
