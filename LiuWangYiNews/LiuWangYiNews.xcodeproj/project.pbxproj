@@ -26,6 +26,8 @@
 		336E51C41E72C98F006C9422 /* UIViewController+LiuAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51BD1E72C98F006C9422 /* UIViewController+LiuAddition.m */; };
 		336E51C71E72CD28006C9422 /* LiuNewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51C61E72CD28006C9422 /* LiuNewsCollectionViewCell.m */; };
 		336E51CA1E72D13B006C9422 /* LiuNewsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51C91E72D13B006C9422 /* LiuNewsTableView.m */; };
+		336E51D01E72D5C2006C9422 /* LiuNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51CF1E72D5C2006C9422 /* LiuNetworkingManager.m */; };
+		336E51D31E72E26C006C9422 /* LiuNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51D21E72E26C006C9422 /* LiuNewsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,10 @@
 		336E51C61E72CD28006C9422 /* LiuNewsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuNewsCollectionViewCell.m; sourceTree = "<group>"; };
 		336E51C81E72D13B006C9422 /* LiuNewsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuNewsTableView.h; sourceTree = "<group>"; };
 		336E51C91E72D13B006C9422 /* LiuNewsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuNewsTableView.m; sourceTree = "<group>"; };
+		336E51CE1E72D5C2006C9422 /* LiuNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuNetworkingManager.h; sourceTree = "<group>"; };
+		336E51CF1E72D5C2006C9422 /* LiuNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuNetworkingManager.m; sourceTree = "<group>"; };
+		336E51D11E72E26C006C9422 /* LiuNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuNewsModel.h; sourceTree = "<group>"; };
+		336E51D21E72E26C006C9422 /* LiuNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuNewsModel.m; sourceTree = "<group>"; };
 		95F3A900CD141561C4E4AE5E /* libPods-LiuWangYiNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiuWangYiNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E698CEC9FA3096D66F677E /* Pods-LiuWangYiNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiuWangYiNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiuWangYiNews/Pods-LiuWangYiNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +162,8 @@
 			children = (
 				336E51AB1E72C313006C9422 /* LiuSourceDataModel.h */,
 				336E51AC1E72C313006C9422 /* LiuSourceDataModel.m */,
+				336E51D11E72E26C006C9422 /* LiuNewsModel.h */,
+				336E51D21E72E26C006C9422 /* LiuNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +184,8 @@
 			children = (
 				336E51A81E72C297006C9422 /* NSArray+reDescriptionAddition.h */,
 				336E51A91E72C297006C9422 /* NSArray+reDescriptionAddition.m */,
+				336E51CE1E72D5C2006C9422 /* LiuNetworkingManager.h */,
+				336E51CF1E72D5C2006C9422 /* LiuNetworkingManager.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -343,7 +353,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				336E51C31E72C98F006C9422 /* UILabel+LiuAddition.m in Sources */,
+				336E51D31E72E26C006C9422 /* LiuNewsModel.m in Sources */,
 				336E51CA1E72D13B006C9422 /* LiuNewsTableView.m in Sources */,
+				336E51D01E72D5C2006C9422 /* LiuNetworkingManager.m in Sources */,
 				336E51A41E72BDE0006C9422 /* LiuHomeViewController.m in Sources */,
 				336E51BF1E72C98F006C9422 /* NSAttributedString+LiuAddition.m in Sources */,
 				336E51C21E72C98F006C9422 /* UIColor+LiuAdditon.m in Sources */,
