@@ -7,8 +7,18 @@
 //
 
 #import "LiuHomeViewController.h"
-
+#import "LiuSourceDataModel.h"
 @interface LiuHomeViewController ()
+
+/**
+ 频道栏scrollview
+ */
+@property (weak, nonatomic) IBOutlet UIScrollView *channelScrollView;
+
+/**
+ 详细新闻栏
+ */
+@property (weak, nonatomic) IBOutlet UICollectionView *newsCollectionView;
 
 @end
 
@@ -16,22 +26,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self loadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(void)loadData {
+    
+    NSArray *dataArray = [LiuSourceDataModel analysisDataWithJSONName:@"topic_news.json"];
+    NSLog(@"%@",dataArray);
+   
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
+
+
+
+
+
+
+
 
 @end
