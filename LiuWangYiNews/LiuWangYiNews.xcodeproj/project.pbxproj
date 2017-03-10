@@ -10,7 +10,6 @@
 		312BB2670A3853FC65FB3DE6 /* libPods-LiuWangYiNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F3A900CD141561C4E4AE5E /* libPods-LiuWangYiNews.a */; };
 		336E51881E72BB1C006C9422 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51871E72BB1C006C9422 /* main.m */; };
 		336E518B1E72BB1C006C9422 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E518A1E72BB1C006C9422 /* AppDelegate.m */; };
-		336E518E1E72BB1C006C9422 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E518D1E72BB1C006C9422 /* ViewController.m */; };
 		336E51911E72BB1C006C9422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336E518F1E72BB1C006C9422 /* Main.storyboard */; };
 		336E51931E72BB1C006C9422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336E51921E72BB1C006C9422 /* Assets.xcassets */; };
 		336E51961E72BB1C006C9422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336E51941E72BB1C006C9422 /* LaunchScreen.storyboard */; };
@@ -18,6 +17,13 @@
 		336E51A61E72C17E006C9422 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 336E51A51E72C17E006C9422 /* topic_news.json */; };
 		336E51AA1E72C297006C9422 /* NSArray+reDescriptionAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51A91E72C297006C9422 /* NSArray+reDescriptionAddition.m */; };
 		336E51AD1E72C313006C9422 /* LiuSourceDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51AC1E72C313006C9422 /* LiuSourceDataModel.m */; };
+		336E51BE1E72C98F006C9422 /* NSArray+LiuAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51B11E72C98F006C9422 /* NSArray+LiuAddition.m */; };
+		336E51BF1E72C98F006C9422 /* NSAttributedString+LiuAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51B31E72C98F006C9422 /* NSAttributedString+LiuAddition.m */; };
+		336E51C01E72C98F006C9422 /* NSObject+LiuAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51B51E72C98F006C9422 /* NSObject+LiuAddition.m */; };
+		336E51C11E72C98F006C9422 /* UIButton+LiuAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51B71E72C98F006C9422 /* UIButton+LiuAddition.m */; };
+		336E51C21E72C98F006C9422 /* UIColor+LiuAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51B91E72C98F006C9422 /* UIColor+LiuAdditon.m */; };
+		336E51C31E72C98F006C9422 /* UILabel+LiuAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51BB1E72C98F006C9422 /* UILabel+LiuAddition.m */; };
+		336E51C41E72C98F006C9422 /* UIViewController+LiuAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 336E51BD1E72C98F006C9422 /* UIViewController+LiuAddition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +32,6 @@
 		336E51871E72BB1C006C9422 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		336E51891E72BB1C006C9422 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		336E518A1E72BB1C006C9422 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		336E518C1E72BB1C006C9422 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		336E518D1E72BB1C006C9422 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		336E51901E72BB1C006C9422 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		336E51921E72BB1C006C9422 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		336E51951E72BB1C006C9422 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +43,21 @@
 		336E51A91E72C297006C9422 /* NSArray+reDescriptionAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+reDescriptionAddition.m"; sourceTree = "<group>"; };
 		336E51AB1E72C313006C9422 /* LiuSourceDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuSourceDataModel.h; sourceTree = "<group>"; };
 		336E51AC1E72C313006C9422 /* LiuSourceDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuSourceDataModel.m; sourceTree = "<group>"; };
+		336E51AF1E72C98F006C9422 /* LiuSysAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuSysAddition.h; sourceTree = "<group>"; };
+		336E51B01E72C98F006C9422 /* NSArray+LiuAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LiuAddition.h"; sourceTree = "<group>"; };
+		336E51B11E72C98F006C9422 /* NSArray+LiuAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LiuAddition.m"; sourceTree = "<group>"; };
+		336E51B21E72C98F006C9422 /* NSAttributedString+LiuAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+LiuAddition.h"; sourceTree = "<group>"; };
+		336E51B31E72C98F006C9422 /* NSAttributedString+LiuAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+LiuAddition.m"; sourceTree = "<group>"; };
+		336E51B41E72C98F006C9422 /* NSObject+LiuAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LiuAddition.h"; sourceTree = "<group>"; };
+		336E51B51E72C98F006C9422 /* NSObject+LiuAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LiuAddition.m"; sourceTree = "<group>"; };
+		336E51B61E72C98F006C9422 /* UIButton+LiuAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LiuAddition.h"; sourceTree = "<group>"; };
+		336E51B71E72C98F006C9422 /* UIButton+LiuAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LiuAddition.m"; sourceTree = "<group>"; };
+		336E51B81E72C98F006C9422 /* UIColor+LiuAdditon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LiuAdditon.h"; sourceTree = "<group>"; };
+		336E51B91E72C98F006C9422 /* UIColor+LiuAdditon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LiuAdditon.m"; sourceTree = "<group>"; };
+		336E51BA1E72C98F006C9422 /* UILabel+LiuAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LiuAddition.h"; sourceTree = "<group>"; };
+		336E51BB1E72C98F006C9422 /* UILabel+LiuAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LiuAddition.m"; sourceTree = "<group>"; };
+		336E51BC1E72C98F006C9422 /* UIViewController+LiuAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LiuAddition.h"; sourceTree = "<group>"; };
+		336E51BD1E72C98F006C9422 /* UIViewController+LiuAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LiuAddition.m"; sourceTree = "<group>"; };
 		95F3A900CD141561C4E4AE5E /* libPods-LiuWangYiNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LiuWangYiNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E698CEC9FA3096D66F677E /* Pods-LiuWangYiNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiuWangYiNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiuWangYiNews/Pods-LiuWangYiNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,13 +95,12 @@
 		336E51851E72BB1C006C9422 /* LiuWangYiNews */ = {
 			isa = PBXGroup;
 			children = (
+				336E51AE1E72C98F006C9422 /* Common */,
 				336E51A71E72C289006C9422 /* Tools */,
 				336E519D1E72BDE0006C9422 /* Classes */,
 				336E51891E72BB1C006C9422 /* AppDelegate.h */,
 				336E51A51E72C17E006C9422 /* topic_news.json */,
 				336E518A1E72BB1C006C9422 /* AppDelegate.m */,
-				336E518C1E72BB1C006C9422 /* ViewController.h */,
-				336E518D1E72BB1C006C9422 /* ViewController.m */,
 				336E518F1E72BB1C006C9422 /* Main.storyboard */,
 				336E51921E72BB1C006C9422 /* Assets.xcassets */,
 				336E51941E72BB1C006C9422 /* LaunchScreen.storyboard */,
@@ -150,6 +168,28 @@
 				336E51A91E72C297006C9422 /* NSArray+reDescriptionAddition.m */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		336E51AE1E72C98F006C9422 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				336E51AF1E72C98F006C9422 /* LiuSysAddition.h */,
+				336E51B01E72C98F006C9422 /* NSArray+LiuAddition.h */,
+				336E51B11E72C98F006C9422 /* NSArray+LiuAddition.m */,
+				336E51B21E72C98F006C9422 /* NSAttributedString+LiuAddition.h */,
+				336E51B31E72C98F006C9422 /* NSAttributedString+LiuAddition.m */,
+				336E51B41E72C98F006C9422 /* NSObject+LiuAddition.h */,
+				336E51B51E72C98F006C9422 /* NSObject+LiuAddition.m */,
+				336E51B61E72C98F006C9422 /* UIButton+LiuAddition.h */,
+				336E51B71E72C98F006C9422 /* UIButton+LiuAddition.m */,
+				336E51B81E72C98F006C9422 /* UIColor+LiuAdditon.h */,
+				336E51B91E72C98F006C9422 /* UIColor+LiuAdditon.m */,
+				336E51BA1E72C98F006C9422 /* UILabel+LiuAddition.h */,
+				336E51BB1E72C98F006C9422 /* UILabel+LiuAddition.m */,
+				336E51BC1E72C98F006C9422 /* UIViewController+LiuAddition.h */,
+				336E51BD1E72C98F006C9422 /* UIViewController+LiuAddition.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9C85EF78121C7239A82B269D /* Pods */ = {
@@ -292,12 +332,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336E51C31E72C98F006C9422 /* UILabel+LiuAddition.m in Sources */,
 				336E51A41E72BDE0006C9422 /* LiuHomeViewController.m in Sources */,
-				336E518E1E72BB1C006C9422 /* ViewController.m in Sources */,
+				336E51BF1E72C98F006C9422 /* NSAttributedString+LiuAddition.m in Sources */,
+				336E51C21E72C98F006C9422 /* UIColor+LiuAdditon.m in Sources */,
+				336E51C01E72C98F006C9422 /* NSObject+LiuAddition.m in Sources */,
+				336E51BE1E72C98F006C9422 /* NSArray+LiuAddition.m in Sources */,
+				336E51C11E72C98F006C9422 /* UIButton+LiuAddition.m in Sources */,
 				336E51AA1E72C297006C9422 /* NSArray+reDescriptionAddition.m in Sources */,
 				336E51AD1E72C313006C9422 /* LiuSourceDataModel.m in Sources */,
 				336E518B1E72BB1C006C9422 /* AppDelegate.m in Sources */,
 				336E51881E72BB1C006C9422 /* main.m in Sources */,
+				336E51C41E72C98F006C9422 /* UIViewController+LiuAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

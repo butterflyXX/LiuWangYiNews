@@ -78,6 +78,7 @@
                     <navigationItem key="navigationItem" title="网易新闻" id="qJQ-k4-dW8"/>
                     <connections>
                         <outlet property="channelScrollView" destination="NNT-DI-O1O" id="pW1-cG-CGP"/>
+                        <outlet property="flowLayout" destination="X53-0Y-xuo" id="9sT-pc-zw6"/>
                         <outlet property="newsCollectionView" destination="bN6-bf-VkP" id="PUx-ef-VtK"/>
                     </connections>
                 </viewController>
