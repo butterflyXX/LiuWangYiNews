@@ -10,6 +10,10 @@
 #import <YYModel.h>
 @implementation LiuSourceDataModel
 
+-(NSString *)description {
+    return [NSString stringWithFormat:@"%@-%@",self.tid,self.tname];
+}
+
 +(NSArray *)analysisDataWithJSONName:(NSString *)jsonName {
     
     //获取本地json数据地址nsData
@@ -25,6 +29,12 @@
     
     dataArray = [NSArray yy_modelArrayWithClass:[self class] json:dataArray];
     
+    //根据tid排序
+    dataArray = [dataArray sortedArrayUsingComparator:^NSComparisonResult(LiuSourceDataModel *obj1,LiuSourceDataModel *obj2) {
+        return [obj1.tid compare:obj2.tid];
+    }];
+    
+    //返回
     return dataArray;
     
 }
