@@ -26,6 +26,8 @@
  布局对象
  */
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
+@property (weak, nonatomic) IBOutlet UIView *leftShadowView;
+@property (weak, nonatomic) IBOutlet UIView *rightShadowView;
 
 
 /**
@@ -46,6 +48,10 @@
     [self loadData];
     [self loadchannelScrollView];
     [self loadNewsCollectionView];
+    
+    //初始化两个掩体view
+    [self createleftShadowView];
+    [self createrightShadowView];
 }
 
 #pragma mark - 加载数据
@@ -205,7 +211,44 @@
 
 
 
+//创建渐变视图
+- (void)createleftShadowView{
+    
+    
+//    self.leftShadowView.backgroundColor = [UIColor whiteColor];
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.leftShadowView.bounds;
+    //设置渐变颜色数组,可以加透明度的渐变
+    gradientLayer.colors = @[(__bridge id)[UIColor colorWithWhite:0 alpha:0].CGColor,(__bridge id)[UIColor colorWithWhite:0 alpha:1].CGColor];
+    //设置渐变区域的起始和终止位置（范围为0-1）
+    gradientLayer.startPoint = CGPointMake(1, 0);
+    gradientLayer.endPoint = CGPointMake(0, 0);
+    //gradientLayer.locations = @[@(0.8f)];//设置渐变位置数组
+    //注意：这里不用下边的这句话
+    //[gradientView.layer addSublayer:gradientLayer];//将CAGradientlayer对象添加在我们要设置背景色的视图的layer层
+    //设置蒙版，用来改变layer的透明度
+    [self.leftShadowView.layer setMask:gradientLayer];
+}
 
+- (void)createrightShadowView{
+    
+    
+    //    self.leftShadowView.backgroundColor = [UIColor whiteColor];
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.rightShadowView.bounds;
+    //设置渐变颜色数组,可以加透明度的渐变
+    gradientLayer.colors = @[(__bridge id)[UIColor colorWithWhite:0 alpha:0].CGColor,(__bridge id)[UIColor colorWithWhite:0 alpha:1].CGColor];
+    //设置渐变区域的起始和终止位置（范围为0-1）
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1, 0);
+    //gradientLayer.locations = @[@(0.8f)];//设置渐变位置数组
+    //注意：这里不用下边的这句话
+    //[gradientView.layer addSublayer:gradientLayer];//将CAGradientlayer对象添加在我们要设置背景色的视图的layer层
+    //设置蒙版，用来改变layer的透明度
+    [self.rightShadowView.layer setMask:gradientLayer];
+}
 
 
 

@@ -11,7 +11,7 @@
 #import "LiuNetworkingManager.h"
 #import "LiuNewsModel.h"
 #import "LiuNewsTableViewCell.h"
-@interface LiuNewsCollectionViewCell ()<UITableViewDelegate,UITableViewDataSource>
+@interface LiuNewsCollectionViewCell ()<UITableViewDelegate,UITableViewDataSource,LiuNewsTableViewDelegate>
 
 @property(nonatomic,weak)LiuNewsTableView *tableView;
 
@@ -35,6 +35,7 @@ static NSString *cellID = @"cellID";
     //设置数据源代理
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.refreshDelegate = self;
     
     //注册cell
     [tableView registerNib:[UINib nibWithNibName:@"LiuNewsCommonCell" bundle:nil] forCellReuseIdentifier:@"commonCell"];
@@ -95,6 +96,14 @@ static NSString *cellID = @"cellID";
         return 180;
     }
     return 80;
+}
+#pragma mark - 刷新数据
+-(void)liuNewsTableViewRefresh {
+    
+    //获取网络数据
+    [[LiuNetworkingManager sharedManger] requestWithType:GET andURLString:[NSString stringWithFormat:@"%@/0-20.html",self.tid] andParameters:nil andCompleteBlock:^(id responseObject) {
+        [self loadDataWithResponseObject:responseObject];
+    }];
 }
 @end
 

@@ -36,6 +36,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNT-DI-O1O">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kUE-Vl-YO8"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d11-hs-Z9J">
+                                <rect key="frame" x="0.0" y="64" width="60" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Ecm-Qj-Fk3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2t-oh-UPi">
+                                <rect key="frame" x="315" y="64" width="60" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="K83-hf-DfU"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bN6-bf-VkP">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,22 +77,21 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNT-DI-O1O">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.65263570910000002" blue="0.15134751769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="kUE-Vl-YO8"/>
-                                </constraints>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NNT-DI-O1O" secondAttribute="trailing" id="1iD-3q-UgW"/>
+                            <constraint firstItem="d11-hs-Z9J" firstAttribute="leading" secondItem="NNT-DI-O1O" secondAttribute="leading" id="5LW-RL-a2z"/>
                             <constraint firstItem="NNT-DI-O1O" firstAttribute="leading" secondItem="aGi-TF-nkt" secondAttribute="leading" id="Hd2-jC-TKb"/>
+                            <constraint firstItem="W2t-oh-UPi" firstAttribute="trailing" secondItem="NNT-DI-O1O" secondAttribute="trailing" id="RON-w8-y7i"/>
+                            <constraint firstItem="d11-hs-Z9J" firstAttribute="bottom" secondItem="NNT-DI-O1O" secondAttribute="bottom" id="YaW-df-kbi"/>
                             <constraint firstAttribute="trailing" secondItem="bN6-bf-VkP" secondAttribute="trailing" id="b0p-lv-8n8"/>
+                            <constraint firstItem="W2t-oh-UPi" firstAttribute="top" secondItem="NNT-DI-O1O" secondAttribute="top" id="kKm-pN-eVj"/>
                             <constraint firstItem="API-ej-IDj" firstAttribute="top" secondItem="bN6-bf-VkP" secondAttribute="bottom" id="krP-h4-LQv"/>
                             <constraint firstItem="bN6-bf-VkP" firstAttribute="leading" secondItem="aGi-TF-nkt" secondAttribute="leading" id="niT-1z-N64"/>
                             <constraint firstItem="bN6-bf-VkP" firstAttribute="top" secondItem="NNT-DI-O1O" secondAttribute="bottom" id="oF3-NT-UaD"/>
+                            <constraint firstItem="W2t-oh-UPi" firstAttribute="bottom" secondItem="NNT-DI-O1O" secondAttribute="bottom" id="uDx-2w-1CF"/>
+                            <constraint firstItem="d11-hs-Z9J" firstAttribute="top" secondItem="NNT-DI-O1O" secondAttribute="top" id="xLG-QU-tso"/>
                             <constraint firstItem="NNT-DI-O1O" firstAttribute="top" secondItem="y8U-XR-kH9" secondAttribute="bottom" id="xUr-r2-zCB"/>
                         </constraints>
                     </view>
@@ -79,12 +99,14 @@
                     <connections>
                         <outlet property="channelScrollView" destination="NNT-DI-O1O" id="pW1-cG-CGP"/>
                         <outlet property="flowLayout" destination="X53-0Y-xuo" id="9sT-pc-zw6"/>
+                        <outlet property="leftShadowView" destination="d11-hs-Z9J" id="btq-On-6hK"/>
                         <outlet property="newsCollectionView" destination="bN6-bf-VkP" id="PUx-ef-VtK"/>
+                        <outlet property="rightShadowView" destination="W2t-oh-UPi" id="4Rq-7C-QVQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMY-H0-yGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="158"/>
+            <point key="canvasLocation" x="58.399999999999999" y="157.87106446776613"/>
         </scene>
     </scenes>
 </document>

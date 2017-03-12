@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class LiuNewsTableView;
+
+@protocol LiuNewsTableViewDelegate <NSObject>
+
+-(void)liuNewsTableViewRefresh;
+
+@end
+
 @interface LiuNewsTableView : UITableView
 
+@property(nonatomic,weak)id<LiuNewsTableViewDelegate> refreshDelegate;
 @end
