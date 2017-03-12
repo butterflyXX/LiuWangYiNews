@@ -104,6 +104,12 @@
     }
     //点击label到中间显示
     [self.channelScrollView setContentOffset:offset animated:YES];
+    
+    //点击label跳转news栏
+    UILabel *label = (UILabel *)sender.view;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:label.tag inSection:0];
+    
+    [self.newsCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
 }
 
 #pragma mark - 设置新闻栏
