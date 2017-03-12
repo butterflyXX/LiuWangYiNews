@@ -66,7 +66,7 @@
     self.channelScrollView.bounces = NO;
     
     //根据数据源创建label放到scrollview上
-    CGFloat labelW = 70;
+    CGFloat labelW = 80;
     CGFloat labelH = 44;
     for (int i = 0;i<self.dataArray.count;i++)
     {
@@ -74,11 +74,36 @@
         UILabel *label = [UILabel liu_labelWithTextFontSize:15 andTextColor:[UIColor darkGrayColor] andText:model.tname];
         label.frame = CGRectMake(i * labelW, 0, labelW, labelH);
         label.textAlignment = NSTextAlignmentCenter;
+        label.tag = i;
+        
+        //开启label的用户交互功能
+        label.userInteractionEnabled = YES;
+        
+        //设置手势方法
+        UITapGestureRecognizer *topRecgnizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(buttonAction:)];
+        [label addGestureRecognizer:topRecgnizer];
+        
         [self.channelScrollView addSubview:label];
     }
     
     //设置滚动范围
     self.channelScrollView.contentSize = CGSizeMake(labelW * self.dataArray.count, 0);
+}
+
+#pragma mark - label的点击事件
+-(void)buttonAction:(UITapGestureRecognizer *)sender {
+    
+    CGPoint offset = CGPointMake(sender.view.center.x - self.view.bounds.size.width / 2, 0);
+    
+    //判断offset范围
+    if (offset.x > self.channelScrollView.contentSize.width - self.view.bounds.size.width) {
+        offset = CGPointMake(self.channelScrollView.contentSize.width - self.view.bounds.size.width, 0);
+    }
+    else if (offset.x < 0) {
+        offset = CGPointMake(0, 0);
+    }
+    //点击label到中间显示
+    [self.channelScrollView setContentOffset:offset animated:YES];
 }
 
 #pragma mark - 设置新闻栏
