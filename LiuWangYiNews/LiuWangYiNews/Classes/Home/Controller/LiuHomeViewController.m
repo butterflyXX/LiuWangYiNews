@@ -71,7 +71,7 @@
     for (int i = 0;i<self.dataArray.count;i++)
     {
         LiuSourceDataModel *model = self.dataArray[i];
-        UILabel *label = [UILabel liu_labelWithTextFontSize:15 andTextColor:[UIColor darkGrayColor] andText:model.tname];
+        UILabel *label = [UILabel liu_labelWithTextFontSize:15 andTextColor:[UIColor blackColor] andText:model.tname];
         label.frame = CGRectMake(i * labelW, 0, labelW, labelH);
         label.textAlignment = NSTextAlignmentCenter;
         label.tag = i;
@@ -82,6 +82,11 @@
         //设置手势方法
         UITapGestureRecognizer *topRecgnizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(buttonAction:)];
         [label addGestureRecognizer:topRecgnizer];
+        
+        if (i == 0) {
+            label.textColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+            label.transform = CGAffineTransformMakeScale(1.3, 1.3);
+        }
         
         [self.channelScrollView addSubview:label];
     }
@@ -95,13 +100,8 @@
     
     CGPoint offset = CGPointMake(sender.view.center.x - self.view.bounds.size.width / 2, 0);
     
-    //判断offset范围
-    if (offset.x > self.channelScrollView.contentSize.width - self.view.bounds.size.width) {
-        offset = CGPointMake(self.channelScrollView.contentSize.width - self.view.bounds.size.width, 0);
-    }
-    else if (offset.x < 0) {
-        offset = CGPointMake(0, 0);
-    }
+    offset = [self offsetWithOffset:offset];
+    
     //点击label到中间显示
     [self.channelScrollView setContentOffset:offset animated:YES];
     
@@ -148,6 +148,46 @@
     cell.tid =model.tid;
     
     return cell;
+}
+
+//滚动collectionview的代理方法
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSInteger index = scrollView.contentOffset.x / self.view.bounds.size.width;
+    float percent = scrollView.contentOffset.x / self.view.bounds.size.width - index;
+    
+    //获取对应的label
+    UILabel *lastLabel = self.channelScrollView.subviews[index];
+    UILabel *nextLabel = self.channelScrollView.subviews[index + 1];
+    
+    //对应的label状态改变
+    lastLabel.textColor = [UIColor colorWithRed:1 - percent green:0 blue:0 alpha:1];
+    lastLabel.transform = CGAffineTransformMakeScale(1 + (1 - percent) * 0.3, 1 + (1 - percent) * 0.3);
+    
+    nextLabel.textColor = [UIColor colorWithRed:percent green:0 blue:0 alpha:1];
+    nextLabel.transform = CGAffineTransformMakeScale(1 + percent * 0.3, 1 + percent * 0.3);
+}
+
+//显示对应的label到中间
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    float percent = scrollView.contentOffset.x / self.view.bounds.size.width;
+    
+    //滚动到的位置
+    CGPoint point = CGPointMake(percent * 80  + 0.5 * 80 - self.view.bounds.size.width  / 2, 0);
+    
+    point = [self offsetWithOffset:point];
+    [self.channelScrollView setContentOffset:point animated:YES];
+}
+
+#pragma mark - 确定offset位置
+-(CGPoint)offsetWithOffset:(CGPoint)offset {
+    //判断offset范围
+    if (offset.x > self.channelScrollView.contentSize.width - self.view.bounds.size.width) {
+        offset = CGPointMake(self.channelScrollView.contentSize.width - self.view.bounds.size.width, 0);
+    }
+    else if (offset.x < 0) {
+        offset = CGPointMake(0, 0);
+    }
+    return offset;
 }
 
 
