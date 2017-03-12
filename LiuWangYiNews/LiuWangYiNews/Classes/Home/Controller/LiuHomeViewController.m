@@ -110,6 +110,13 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:label.tag inSection:0];
     
     [self.newsCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    for (UILabel *sublabel in self.channelScrollView.subviews) {
+        sublabel.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+        sublabel.transform = CGAffineTransformMakeScale(1, 1);
+    }
+    label.textColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+    label.transform = CGAffineTransformMakeScale(1.3, 1.3);
+    
 }
 
 #pragma mark - 设置新闻栏
@@ -150,21 +157,27 @@
     return cell;
 }
 
-//滚动collectionview的代理方法
+//滚动collectionview的代理方法,改变label属性
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if (scrollView.tracking == 0 && scrollView.dragging == 0 && scrollView.decelerating == 0) {
+        return;
+    }
     NSInteger index = scrollView.contentOffset.x / self.view.bounds.size.width;
     float percent = scrollView.contentOffset.x / self.view.bounds.size.width - index;
     
-    //获取对应的label
+    //获取对应的label//对应的label状态改变
     UILabel *lastLabel = self.channelScrollView.subviews[index];
-    UILabel *nextLabel = self.channelScrollView.subviews[index + 1];
-    
-    //对应的label状态改变
     lastLabel.textColor = [UIColor colorWithRed:1 - percent green:0 blue:0 alpha:1];
     lastLabel.transform = CGAffineTransformMakeScale(1 + (1 - percent) * 0.3, 1 + (1 - percent) * 0.3);
+    if (index + 1 <self.dataArray.count) {
+        UILabel *nextLabel = self.channelScrollView.subviews[index + 1];
+        nextLabel.textColor = [UIColor colorWithRed:percent green:0 blue:0 alpha:1];
+        nextLabel.transform = CGAffineTransformMakeScale(1 + percent * 0.3, 1 + percent * 0.3);
+    }
     
-    nextLabel.textColor = [UIColor colorWithRed:percent green:0 blue:0 alpha:1];
-    nextLabel.transform = CGAffineTransformMakeScale(1 + percent * 0.3, 1 + percent * 0.3);
+    
+    
 }
 
 //显示对应的label到中间
