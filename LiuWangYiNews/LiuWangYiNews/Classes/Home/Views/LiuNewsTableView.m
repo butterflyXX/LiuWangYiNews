@@ -8,6 +8,11 @@
 
 #import "LiuNewsTableView.h"
 
+@interface LiuNewsTableView ()
+
+
+@end
+
 @implementation LiuNewsTableView
 
 /*

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commonCell" rowHeight="74" id="caP-rj-Qs0" customClass="LiuNewsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="caP-rj-Qs0" id="VdS-E4-9Sw">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gK8-3I-byY">
+                        <rect key="frame" x="10" y="6.5" width="80" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Tpq-DY-W4I"/>
+                            <constraint firstAttribute="height" constant="60" id="ss8-BC-K7n"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpM-4A-g5L">
+                        <rect key="frame" x="105" y="6" width="250" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek3-qq-CQ6">
+                        <rect key="frame" x="322" y="50.5" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q36-Me-Gmx">
+                        <rect key="frame" x="105" y="50.5" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Ek3-qq-CQ6" secondAttribute="trailing" constant="20" id="1fw-o5-y50"/>
+                    <constraint firstItem="Ek3-qq-CQ6" firstAttribute="bottom" secondItem="gK8-3I-byY" secondAttribute="bottom" id="1qL-NV-POc"/>
+                    <constraint firstItem="gK8-3I-byY" firstAttribute="centerY" secondItem="VdS-E4-9Sw" secondAttribute="centerY" id="ABQ-hu-oXJ"/>
+                    <constraint firstItem="xpM-4A-g5L" firstAttribute="top" secondItem="gK8-3I-byY" secondAttribute="top" id="EBE-13-8cd"/>
+                    <constraint firstItem="xpM-4A-g5L" firstAttribute="leading" secondItem="gK8-3I-byY" secondAttribute="trailing" constant="15" id="MpK-3k-OOX"/>
+                    <constraint firstItem="q36-Me-Gmx" firstAttribute="bottom" secondItem="gK8-3I-byY" secondAttribute="bottom" id="NkW-Db-k25"/>
+                    <constraint firstItem="q36-Me-Gmx" firstAttribute="leading" secondItem="xpM-4A-g5L" secondAttribute="leading" id="bpq-8T-RJM"/>
+                    <constraint firstItem="gK8-3I-byY" firstAttribute="leading" secondItem="VdS-E4-9Sw" secondAttribute="leading" constant="10" id="vha-I5-GnR"/>
+                    <constraint firstAttribute="trailing" secondItem="xpM-4A-g5L" secondAttribute="trailing" constant="20" id="z5M-2Z-evz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgsrcImageView" destination="gK8-3I-byY" id="hD0-aH-7lY"/>
+                <outlet property="replyCountLabel" destination="Ek3-qq-CQ6" id="DEU-sv-Qii"/>
+                <outlet property="sourceLabel" destination="q36-Me-Gmx" id="3Fx-SO-Wf8"/>
+                <outlet property="titleLabel" destination="xpM-4A-g5L" id="r3A-2D-GBE"/>
+            </connections>
+            <point key="canvasLocation" x="1" y="-54"/>
+        </tableViewCell>
+    </objects>
+</document>

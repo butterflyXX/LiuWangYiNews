@@ -10,6 +10,7 @@
 #import "LiuNewsTableView.h"
 #import "LiuNetworkingManager.h"
 #import "LiuNewsModel.h"
+#import "LiuNewsTableViewCell.h"
 @interface LiuNewsCollectionViewCell ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,weak)LiuNewsTableView *tableView;
@@ -36,7 +37,9 @@ static NSString *cellID = @"cellID";
     tableView.dataSource = self;
     
     //注册cell
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+    [tableView registerNib:[UINib nibWithNibName:@"LiuNewsCommonCell" bundle:nil] forCellReuseIdentifier:@"commonCell"];
+    [tableView registerNib:[UINib nibWithNibName:@"LiuNewsBigImageCell" bundle:nil] forCellReuseIdentifier:@"bigImageCell"];
+    [tableView registerNib:[UINib nibWithNibName:@"LiuNewsImagesCell" bundle:nil] forCellReuseIdentifier:@"imagesCell"];
 }
 
 -(void)layoutSubviews {
@@ -50,9 +53,20 @@ static NSString *cellID = @"cellID";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     LiuNewsModel *model = self.dataArray[indexPath.row];
-    cell.textLabel.text = model.title;
+    LiuNewsTableViewCell *cell;
+    if (model.imgType) {
+        cell= [tableView dequeueReusableCellWithIdentifier:@"bigImageCell" forIndexPath:indexPath];
+    }
+    else if (model.imgextra.count){
+        cell= [tableView dequeueReusableCellWithIdentifier:@"imagesCell" forIndexPath:indexPath];
+    }
+    else {
+        cell= [tableView dequeueReusableCellWithIdentifier:@"commonCell" forIndexPath:indexPath];
+    }
+    
+    
+    cell.cellModel = model;
     return cell;
 }
 
@@ -72,6 +86,16 @@ static NSString *cellID = @"cellID";
     [self.tableView reloadData];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    LiuNewsModel *model = self.dataArray[indexPath.row];
+    if (model.imgType) {
+        return 130;
+    }
+    else if (model.imgextra.count == 2) {
+        return 180;
+    }
+    return 80;
+}
 @end
 
 
